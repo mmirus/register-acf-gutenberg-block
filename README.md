@@ -2,6 +2,8 @@
 
 Easily register new Gutenberg blocks via ACF
 
+Thanks to @mwdelaney and @mikespainhower for everything I learned from their approaches to this problem!
+
 ## Usage
 
 1. Install with: `composer require mmirus/register-acf-gutenberg-block`
