@@ -11,7 +11,7 @@ Thanks to [@mwdelaney](https://github.com/MWDelaney/) and [@mikespainhower](http
 
 Your block definitions can be added in a plugin (recommended) or a theme.
 
-Example block definitions can be found at https://github.com/mmirus/register-acf-gutenberg-block-examples.
+<div style="border-left: 5px solid #0054bd; padding-left: 1rem; background-color: #ecf3f9; font-size: 1.25rem;">Example block definitions can be found at https://github.com/mmirus/register-acf-gutenberg-block-examples.</div>
 
 Refer to these resources for what block options are available:
 
