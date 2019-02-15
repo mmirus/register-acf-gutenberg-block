@@ -2,7 +2,7 @@
 
 Easily register new Gutenberg blocks via ACF
 
-Thanks to @mwdelaney and @mikespainhower for everything I learned from their approaches to this problem!
+Thanks to [@mwdelaney](https://github.com/MWDelaney/) and [@mikespainhower](https://github.com/mikespainhower/) for everything I learned from their approaches to this problem!
 
 ## Usage
 
