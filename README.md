@@ -23,7 +23,7 @@ ACF provides two methods to render blocks:
 - a callback function that echos PHP
 - a PHP template file
 
-This plugin adds a third option: Blade templates. For now, this only works if you're using [Sage](https:/roots.io/sage/)).
+This plugin adds a third option: Blade templates. For now, this only works if you're using [Sage](https:/roots.io/sage/).
 
 To use a Blade template, just pass the absolute path to the template file, including the `.blade.php` extension, in the `render_template` option.
 
@@ -31,15 +31,15 @@ _NB: If you pass both `render_callback` and `render_template`, ACF uses the call
 
 ### Defining Your Block's Fields
 
-To promote keeping your block field definitions in code with the rest of the block config, you can pass a `fields` option with the block settings when registering your block. The value of this option must be an PHP field definition array. Primarily this is intended to allow you to use [acf-builder](https://github.com/StoutLogic/acf-builder) to define your fields, as this is the format acf-builder's `build()` method returns.
+To promote keeping your block's field definitions in code with the rest of the block config, you can pass a `fields` option with the block settings when registering your block. The value of this option must be an ACF PHP field definition array. Primarily this is intended to allow you to use [acf-builder](https://github.com/StoutLogic/acf-builder) to define your fields, as this is the format acf-builder's `build()` method returns.
 
-Besides the `fields` setting, you can define the ACF fields used by the block however you normally prefer to add fields with ACF:
+Other than the `fields` setting, you can define the ACF fields used by your block however you normally prefer to add fields:
 
 - via ACF's GUI
 - via ACF's JSON or PHP methods (you could save these to your block plugin)
 - via acf-builder
 
-All you have to do is set the location rule to be your block.
+All you have to do is set the location rule to match your block. Note that blocks are registered with the prefix `acf/`, as in `acf/your-block-name`.
 
 ## Installation
 
