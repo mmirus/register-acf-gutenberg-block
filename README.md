@@ -11,15 +11,7 @@ Thanks to [@mwdelaney](https://github.com/MWDelaney/) and [@mikespainhower](http
 
 Your block definitions can be added in a plugin (recommended) or a theme.
 
-<style>
-.call-out {
-  padding-left: 1rem;
-  border-left: 5px solid #0054bd;
-  background-color: #ecf3f9;
-  font-size: 1.25rem;
-}
-</style>
-<div class="call-out">Example block definitions can be found at https://github.com/mmirus/register-acf-gutenberg-block-examples.</div>
+Example block definitions can be found at https://github.com/mmirus/register-acf-gutenberg-block-examples.
 
 Following the examples will be the quickest way to get started. One you have the concept down, refer to these resources to go in-depth on what block options are available:
 
