@@ -9,9 +9,11 @@ Version: 0.1.0
 GitHub Plugin URI: https://github.com/mmirus/register-acf-gutenberg-block
  */
 
+declare(strict_types=1);
+
 namespace mmirus\RegisterGutenblock;
 
-add_action('acf/init', function () {
+add_action('acf/init', function (): void {
     if (!function_exists('acf_register_block')) {
         return;
     }
@@ -44,7 +46,7 @@ add_action('acf/init', function () {
  * @param array $block Block definition
  * @return boolean
  */
-function is_blade_template(array $block)
+function is_blade_template(array $block) : bool
 {
     if (!isset($block['render_template'])) {
         return false;
@@ -56,7 +58,7 @@ function is_blade_template(array $block)
     return (substr($block['render_template'], -strlen($blade_ext)) === $blade_ext);
 }
 
-function render_blade_template($block, $content = '', $is_preview = false)
+function render_blade_template(array $block, string $content = '', bool $is_preview = false) : void
 {
     // Set up the block data
     $block['slug'] = str_replace('acf/', '', $block['name']);
