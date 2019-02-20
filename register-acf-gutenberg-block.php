@@ -5,7 +5,7 @@ Plugin URI: https://github.com/mmirus/register-acf-gutenberg-block
 Description: Easily register new Gutenberg blocks via ACF
 Author: Matt Mirus
 Author URI: https://github.com/mmirus
-Version: 0.1.0
+Version: 0.1.1
 GitHub Plugin URI: https://github.com/mmirus/register-acf-gutenberg-block
  */
 
