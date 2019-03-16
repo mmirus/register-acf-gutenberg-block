@@ -46,5 +46,8 @@
         "composer test"
       ]
     }
+  },
+  "config": {
+    "bin-compat": "full"
   }
 }
