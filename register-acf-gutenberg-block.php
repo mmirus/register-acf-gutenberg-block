@@ -5,7 +5,7 @@ Plugin URI: https://github.com/mmirus/register-acf-gutenberg-block
 Description: Easily register new Gutenberg blocks via ACF
 Author: Matt Mirus
 Author URI: https://github.com/mmirus
-Version: 0.1.1
+Version: 0.1.2
 GitHub Plugin URI: https://github.com/mmirus/register-acf-gutenberg-block
  */
 
@@ -60,11 +60,23 @@ function is_blade_template(array $block) : bool
 
 function render_blade_template(array $block, string $content = '', bool $is_preview = false) : void
 {
-    // Set up the block data
-    $block['slug'] = str_replace('acf/', '', $block['name']);
-    $block['classes'] = implode(' ', [$block['slug'], $block['className'], $block['align']]);
+    try {
+        if (!function_exists('\App\template')) {
+            throw new \Exception("\\App\\template() not found. Are you trying to register a Blade-based block on a non-Sage theme?");
+        }
 
-    // Use Sage's template() function to echo the block and populate it with data
-    // TODO: replace with Acorn
-    echo \App\template($block['render_template'], ['block' => $block]);
+        // Set up the block data
+        $block['slug'] = str_replace('acf/', '', $block['name']);
+        $block['classes'] = implode(' ', [$block['slug'], $block['className'], $block['align']]);
+
+        // Use Sage's template() function to echo the block and populate it with data
+        // TODO: replace with Acorn
+        echo \App\template($block['render_template'], ['block' => $block]);
+    } catch (\Throwable $th) {
+        if (is_admin()) {
+            echo '<div class="editor-warning"><div class="editor-warning__contents"><p class="editor-warning__message">Error while rendering block <code>' . $block['name'] . '</code>:</p><p class="editor-warning__message">' . $th->getMessage() . '</p></div></div>';
+        }
+
+        trigger_error($th->getMessage(), 512);
+    }
 }
